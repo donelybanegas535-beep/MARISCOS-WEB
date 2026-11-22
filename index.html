@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+
+ <meta
+ name="viewport"
+ content="width=device-width, initial-scale=1.0"
+ >
+
+ <title>Mariscos [Ceviches Loly] | Camarón, caracol y ceviches</title>
+
+ <meta
+ name="description"
+ content="Venta de camarón, caracol, ceviches y tajadas. Haz tu pedido por WhatsApp."
+ >
+
+ <!-- CONEXIÓN CON EL ARCHIVO CSS -->
+ <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+ <!-- =====================================================
+ ENCABEZADO
+ ===================================================== -->
+ <header class="header">
+ <div class="container header-inner">
+
+ <a href="#inicio" class="logo">
+ 🦐 Mariscos y ceviches Loly
+ </a>
+
+ <button
+ type="button"
+ class="menu-toggle"
+ id="menuToggle"
+ aria-label="Abrir menú"
+ aria-controls="nav"
+ aria-expanded="false"
+ >
+ ☰
+ </button>
+
+ <nav class="nav" id="nav" aria-label="Navegación principal">
+ <a href="#menu">Menú</a>
+ <a href="#como-pedir">Cómo pedir</a>
+ <a href="#pedido">Haz tu pedido</a>
+ <a href="#contacto">Contacto</a>
+
+ <a href="#pedido" class="btn btn-primary btn-sm">
+ Pedir ahora
+ </a>
+ </nav>
+
+ </div>
+ </header>
+
+ <main>
+
+ <!-- =====================================================
+ PORTADA
+ La imagen se carga desde script.js
+ ===================================================== -->
+ <section class="hero" id="inicio">
+ <div class="container hero-inner">
+
+ <div class="hero-text">
+
+ <h1>
+ Del mar a tu mesa, fresco y con sabor catracho
+ </h1>
+
+ <p>
+ Camarón, caracol, ceviches preparados al momento y
+ tajadas bien tostaditas. Pedí por WhatsApp y te lo llevamos.
+ </p>
+
+ <div class="hero-buttons">
+
+ <a href="#menu" class="btn btn-light">
+ Ver menú
+ </a>
+
+ <a href="#pedido" class="btn btn-primary">
+ Hacer pedido
+ </a>
+
+ </div>
+
+ <ul class="hero-badges">
+ <li>✅ Producto fresco</li>
+ <li>🛵 Entrega a domicilio</li>
+ <li>💵 Efectivo o transferencia</li>
+ </ul>
+
+ </div>
+
+ <!-- La imagen de portada se coloca desde script.js -->
+ <div class="hero-img" id="heroImg">
+ <span class="hero-emoji" aria-hidden="true">
+ 🍤
+ </span>
+ </div>
+
+ </div>
+ </section>
+
+ <!-- =====================================================
+ MENÚ DE PRODUCTOS
+ Los productos se crean desde script.js
+ ===================================================== -->
+ <section class="section" id="menu">
+ <div class="container">
+
+ <div class="section-title">
+ <h2>Nuestro menú</h2>
+
+ <p>
+ Precios en lempiras · Sujetos a disponibilidad del día
+ </p>
+ </div>
+
+ <!-- Los filtros se crean desde script.js -->
+ <div
+ class="filtros"
+ id="filtros"
+ aria-label="Filtros de productos"
+ ></div>
+
+ <!-- Las tarjetas de productos se crean desde script.js -->
+ <div
+ class="grid-productos"
+ id="gridProductos"
+ aria-live="polite"
+ ></div>
+
+ </div>
+ </section>
+
+ <!-- =====================================================
+ CÓMO HACER UN PEDIDO
+ ===================================================== -->
+ <section class="section section-alt" id="como-pedir">
+ <div class="container">
+
+ <div class="section-title">
+ <h2>¿Cómo pedir?</h2>
+ <p>Fácil y rápido, en cuatro pasos</p>
+ </div>
+
+ <div class="pasos">
+
+ <article class="paso">
+ <span class="paso-num">1</span>
+
+ <h3>Elegí</h3>
+
+ <p>
+ Tocá <strong>+ Agregar</strong> en los productos
+ que querés comprar.
+ </p>
+ </article>
+
+ <article class="paso">
+ <span class="paso-num">2</span>
+
+ <h3>Completá</h3>
+
+ <p>
+ Escribí tus datos y la dirección donde recibirás
+ el pedido.
+ </p>
+ </article>
+
+ <article class="paso">
+ <span class="paso-num">3</span>
+
+ <h3>Enviá</h3>
+
+ <p>
+ El pedido se abrirá en WhatsApp. Solamente tendrás
+ que tocar Enviar.
+ </p>
+ </article>
+
+ <article class="paso">
+ <span class="paso-num">4</span>
+
+ <h3>Disfrutá</h3>
+
+ <p>
+ Confirmaremos el pedido y recibirás tus productos
+ frescos.
+ </p>
+ </article>
+
+ </div>
+
+ </div>
+ </section>
+
+ <!-- =====================================================
+ CARRITO Y FORMULARIO DEL PEDIDO
+ ===================================================== -->
+ <section class="section" id="pedido">
+ <div class="container pedido-grid">
+
+ <!-- CARRITO -->
+ <aside class="card carrito" aria-labelledby="tituloCarrito">
+
+ <h2 id="tituloCarrito">
+ Tu pedido
+ </h2>
+
+ <div
+ id="carritoLista"
+ class="carrito-lista"
+ aria-live="polite"
+ >
+ <p class="vacio">
+ Todavía no has agregado productos.
+ </p>
+ </div>
+
+ <div class="carrito-total">
+ <span>Total:</span>
+ <strong id="carritoTotal">L 0.00</strong>
+ </div>
+
+ <button
+ type="button"
+ class="btn btn-outline btn-block"
+ id="btnVaciar"
+ >
+ Vaciar pedido
+ </button>
+
+ </aside>
+
+ <!-- FORMULARIO -->
+ <form
+ class="card formulario"
+ id="formPedido"
+ novalidate
+ >
+
+ <h2>Hacé tu pedido</h2>
+
+ <div class="form-row">
+
+ <label for="nombre">
+ Nombre *
+
+ <input
+ type="text"
+ id="nombre"
+ name="nombre"
+ required
+ autocomplete="name"
+ placeholder="Escribe tu nombre"
+ >
+ </label>
+
+ <label for="telefono">
+ Teléfono o WhatsApp *
+
+ <input
+ type="tel"
+ id="telefono"
+ name="telefono"
+ required
+ autocomplete="tel"
+ inputmode="tel"
+ placeholder="9999-9999"
+ >
+ </label>
+
+ </div>
+
+ <div class="form-row">
+
+ <label for="fecha">
+ Fecha de entrega *
+
+ <input
+ type="date"
+ id="fecha"
+ name="fecha"
+ required
+ >
+ </label>
+
+ <label for="hora">
+ Hora de entrega
+
+ <input
+ type="time"
+ id="hora"
+ name="hora"
+ >
+ </label>
+
+ </div>
+
+ <label for="direccion">
+ Dirección o punto de referencia *
+
+ <input
+ type="text"
+ id="direccion"
+ name="direccion"
+ required
+ autocomplete="street-address"
+ placeholder="Colonia, calle, casa y punto de referencia"
+ >
+ </label>
+
+ <label for="pago">
+ Forma de pago
+
+ <select id="pago" name="pago">
+ <option value="Efectivo">Efectivo</option>
+ <option value="Transferencia">Transferencia</option>
+ <option value="Tarjeta">Tarjeta</option>
+ </select>
+ </label>
+
+ <label for="notas">
+ Notas adicionales
+
+ <textarea
+ id="notas"
+ name="notas"
+ rows="3"
+ placeholder="Ejemplo: sin cebolla, extra limón..."
+ ></textarea>
+ </label>
+
+ <p
+ class="error"
+ id="mensajeError"
+ role="alert"
+ aria-live="assertive"
+ ></p>
+
+ <button
+ type="submit"
+ class="btn btn-whatsapp btn-block"
+ >
+ 📲 Enviar pedido por WhatsApp
+ </button>
+
+ <p class="nota">
+ Al continuar, WhatsApp se abrirá con el pedido listo.
+ Solamente tendrás que tocar Enviar.
+ </p>
+
+ </form>
+
+ </div>
+ </section>
+
+ <!-- =====================================================
+ CONTACTO
+ ===================================================== -->
+ <section class="section section-alt" id="contacto">
+ <div class="container">
+
+ <div class="section-title">
+ <h2>Contacto</h2>
+
+ <p>
+ Comunícate con nosotros para consultar disponibilidad
+ y entregas.
+ </p>
+ </div>
+
+ <div class="contacto-grid">
+
+ <article class="card info">
+ <span class="info-icono" aria-hidden="true">
+ 📍
+ </span>
+
+ <h3>Ubicación</h3>
+
+ <p>
+ Barrio San Isidro 3 Calle 14 y 15 Avenida, Puerto Cortes, Cortés
+ </p>
+ </article>
+
+ <article class="card info">
+ <span class="info-icono" aria-hidden="true">
+ 📱
+ </span>
+
+ <h3>WhatsApp</h3>
+
+ <p id="textoWhatsApp">
+ +504 3380-1128
+ </p>
+ </article>
+
+ <article class="card info">
+ <span class="info-icono" aria-hidden="true">
+ 🕒
+ </span>
+
+ <h3>Horario</h3>
+
+ <p>
+ Lunes a domingo<br>
+ 8:00 a.m. a 6:00 p.m.
+ </p>
+ </article>
+
+ <article class="card info">
+ <span class="info-icono" aria-hidden="true">
+ 🛵
+ </span>
+
+ <h3>Entregas</h3>
+
+ <p>
+ Entregas a domicilio en zonas cercanas.
+ Consultá el costo de envío.
+ </p>
+ </article>
+
+ <article class="card info">
+ <span class="info-icono" aria-hidden="true">
+ 💵
+ </span>
+
+ <h3>Formas de pago</h3>
+
+ <p>
+ Efectivo, transferencia y tarjeta.
+ </p>
+ </article>
+
+ </div>
+
+ </div>
+ </section>
+
+ <!-- =====================================================
+ RESEÑAS
+ ===================================================== -->
+ <section class="section" id="resenas">
+ <div class="container">
+
+ <div class="section-title">
+ <h2>Lo que dicen nuestros clientes</h2>
+
+ <p>
+ La frescura y el sabor hablan por nosotros
+ </p>
+ </div>
+
+ <div class="resenas">
+
+ <article class="card resena">
+
+ <div
+ class="estrellas"
+ aria-label="Cinco estrellas"
+ >
+ ★★★★★
+ </div>
+
+ <p>
+ “El ceviche mixto está buenísimo y bien fresco.”
+ </p>
+
+ <span>— Cliente 1</span>
+
+ </article>
+
+ <article class="card resena">
+
+ <div
+ class="estrellas"
+ aria-label="Cinco estrellas"
+ >
+ ★★★★★
+ </div>
+
+ <p>
+ “El pedido llegó puntual y el camarón estaba bien limpio.”
+ </p>
+
+ <span>— Cliente 2</span>
+
+ </article>
+
+ <article class="card resena">
+
+ <div
+ class="estrellas"
+ aria-label="Cinco estrellas"
+ >
+ ★★★★★
+ </div>
+
+ <p>
+ “Las tajadas con el ceviche son una combinación perfecta.”
+ </p>
+
+ <span>— Cliente 3</span>
+
+ </article>
+
+ </div>
+
+ </div>
+ </section>
+
+ </main>
+
+ <!-- =====================================================
+ PIE DE PÁGINA
+ ===================================================== -->
+ <footer class="footer">
+ <div class="container footer-grid">
+
+ <div>
+ <h3>🦐 Mariscos [Tu Negocio]</h3>
+
+ <p>
+ Mariscos frescos y ceviches preparados al momento.
+ </p>
+ </div>
+
+ <div>
+ <h4>Productos</h4>
+ <p>Camarón · Caracol</p>
+ <p>Ceviches · Tajadas</p>
+ </div>
+
+ <div>
+ <h4>Síguenos</h4>
+ <p>Facebook · Instagram</p>
+ <p>WhatsApp</p>
+ </div>
+
+ </div>
+
+ <p class="copy">
+ © <span id="anio"></span> Mariscos [Tu Negocio].
+ Todos los derechos reservados.
+ </p>
+ </footer>
+
+ <!-- =====================================================
+ BOTÓN FLOTANTE DE WHATSAPP
+ ===================================================== -->
+ <a
+ href="#"
+ class="whatsapp-flotante"
+ id="whatsappFlotante"
+ target="_blank"
+ rel="noopener noreferrer"
+ aria-label="Abrir conversación en WhatsApp"
+ >
+ 💬
+ </a>
+
+ <!-- MENSAJE QUE APARECE AL AGREGAR UN PRODUCTO -->
+ <div
+ class="toast"
+ id="toast"
+ role="status"
+ aria-live="polite"
+ ></div>
+
+ <!-- CONEXIÓN CON EL ARCHIVO JAVASCRIPT -->
+ <script src="js/script.js"></script>
+</body>
+</html>
