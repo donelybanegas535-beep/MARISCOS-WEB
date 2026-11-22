@@ -4,7 +4,7 @@
  ========================================================= */
 
 // Escribe tu número con 504, sin espacios ni guiones.
-const WHATSAPP = "50488728616";
+const WHATSAPP = "50433801128";
 
 // Imagen principal de la página.
 // Esta imagen debe estar dentro de la carpeta img.
