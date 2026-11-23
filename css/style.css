@@ -1193,3 +1193,31 @@ line-clamp: 2;
  grid-template-columns: 1fr;
  }
 }
+/* =========================================================
+ SECCIÓN DE VIDEO
+ ========================================================= */
+
+.video-seccion {
+ background-color: #f3f8fb;
+}
+
+.video-contenedor {
+ width: 100%;
+ max-width: 850px;
+ margin: 0 auto;
+
+ overflow: hidden;
+ border-radius: 18px;
+
+ background-color: #000000;
+ box-shadow: 0 12px 30px rgba(11, 61, 92, 0.18);
+}
+
+.video-contenedor video {
+ display: block;
+ width: 100%;
+ height: auto;
+ max-height: 520px;
+
+ background-color: #000000;
+}
