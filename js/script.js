@@ -99,6 +99,17 @@ id: 7,
  emoji: "nada",
  descripcion: "Ideal para pasar tiempo con la familia.",
  etiqueta: ""
+},
+{
+id: 8,
+ nombre: "Ceviche de camaron Familiar",
+ categoria: "Ceviches",
+ precio: 25,
+ foto: "img/ceviches.jpg",
+ posicion: "center",
+ emoji: "nada",
+ descripcion: "Disfruta cada momento en familia con un excelente toque costero.",
+ etiqueta: ""
 }
 ];
 /* =========================================================
