@@ -88,9 +88,19 @@ const PRODUCTOS = [
  emoji: "🍌",
  descripcion: "Tajadas de plátano verde bien tostaditas.",
  etiqueta: ""
- }
+ },
+ {
+id: 7,
+ nombre: "Ceviche de caracol Familiar",
+ categoria: "Ceviches",
+ precio: 25,
+ foto: "img/ceviches.jpg",
+ posicion: "center",
+ emoji: "nada",
+ descripcion: "Ideal para pasar tiempo con la familia.",
+ etiqueta: ""
+}
 ];
-
 /* =========================================================
  FUNCIONAMIENTO INTERNO
  NO NECESITAS MODIFICAR ESTA PARTE
