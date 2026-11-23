@@ -110,7 +110,29 @@ id: 8,
  emoji: "nada",
  descripcion: "Disfruta cada momento en familia con un excelente toque costero.",
  etiqueta: ""
-}
+},
+{
+id: 9,
+ nombre: "Ceviche Mixto Personal",
+ categoria: "Ceviches",
+ precio: 25,
+ foto: "img/ceviches.jpg",
+ posicion: "center",
+ emoji: "nada",
+ descripcion: "Disfruta cada momento en familia con un excelente toque costero.",
+ etiqueta: ""
+},
+{
+id: 10,
+ nombre: "Ceviche Mixto Familiar",
+ categoria: "Ceviches",
+ precio: 25,
+ foto: "img/ceviches.jpg",
+ posicion: "center",
+ emoji: "nada",
+ descripcion: "Disfruta cada momento en familia con un excelente toque costero.",
+ etiqueta: ""
+},
 ];
 /* =========================================================
  FUNCIONAMIENTO INTERNO
